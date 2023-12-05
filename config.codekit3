@@ -9,6 +9,30 @@
   ],
   "creatorBuild" : "34564",
   "files" : {
+    "\/assets\/normalize.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/normalize-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/assets\/styles.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/styles-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/assets\/styles.scss" : {
       "aP" : 0,
       "bl" : 0,
