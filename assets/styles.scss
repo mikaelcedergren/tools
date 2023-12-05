@@ -4,6 +4,7 @@ $primary: #fe016d;
 $secondary: #018afe;
 $white: #fff;
 $page-width: 720px;
+$black: #000;
 
 * {
   font-family: 'Plus Jakarta Sans';
@@ -16,7 +17,7 @@ $page-width: 720px;
 
 body {
   background-color: white;
-  color: black;
+  color: $black;
   font-size: 16px;
   padding: 2rem;
 }
