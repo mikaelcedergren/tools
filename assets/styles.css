@@ -213,9 +213,11 @@ body {
   background-color: white;
   color: #222;
   font-size: 18px;
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
   line-height: 1.5;
   text-align: left;
+  background-color: #f9f9f9;
 }
 
 a {
@@ -225,7 +227,9 @@ a {
 }
 
 #wrapper {
-  max-width: 720px;
+  max-width: 650px;
+  background-color: #fff;
+  padding: 2rem;
 }
 
 h1 {
@@ -243,7 +247,7 @@ p {
 
 input,
 textarea {
-  animation: all 0.5s ease;
+  transition: all 0.3s ease;
   width: 100%;
   height: 48px;
   font-size: 1rem;
@@ -259,10 +263,19 @@ input:focus,
 textarea:focus {
   border-color: #fe016d;
 }
+input:focus ~ .input-note,
+textarea:focus ~ .input-note {
+  visibility: visible;
+}
 
 textarea {
   padding: 1rem;
   height: 160px;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
 }
 
 button {
@@ -292,7 +305,7 @@ hr {
   border: 0 none;
 }
 
-.block {
+.box {
   border: 2px dashed rgba(0, 0, 0, 0.05);
   padding: 1rem;
   border-radius: 4px;
@@ -319,9 +332,51 @@ hr {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.form-note {
-  font-size: 14px;
-  color: gray;
+.input {
   position: relative;
-  top: -0.75rem;
+}
+
+.input-note {
+  font-size: 14px;
+  visibility: hidden;
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #888;
+  max-width: 200px;
+  position: absolute;
+  top: 0;
+  right: calc(-200px - 1rem);
+  padding: 0.5rem;
+  border-radius: 4px;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  min-height: 48px;
+}
+.input-note:after, .input-note:before {
+  right: 100%;
+  top: 24px;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.input-note:after {
+  border-color: rgba(221, 221, 221, 0);
+  border-right-color: #fff;
+  border-width: 8px;
+  margin-top: -8px;
+}
+.input-note:before {
+  border-color: rgba(221, 221, 221, 0);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-width: 9px;
+  margin-top: -9px;
 }
