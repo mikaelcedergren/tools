@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Lato:wght@400;700;900');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Figtree:wght@400;500;600;700&display=swap');
 @import '_variables.scss';
 @import '_grid.scss';
 @import '_utilities.scss';
 
 * {
-  font-family: 'Lato';
-  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-variant-ligatures: common-ligatures;
@@ -13,6 +11,8 @@
 }
 
 body {
+  font-family: 'Figtree', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 500;
   background-color: white;
   color: $black;
   font-size: $font-size-default;
@@ -24,9 +24,9 @@ body {
 }
 
 a {
-    color: $black;
-    font-weight: bold;
-    text-decoration: underline;
+  color: $black;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 #wrapper {
@@ -36,12 +36,13 @@ a {
 }
 
 h1 {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 4rem;
   font-weight: 400;
   line-height: 0.75;
   margin: 0 0 3rem 0;
-  color: #19002d;
+  color: $black;
+  letter-spacing: -0.1rem;
 }
 
 p {
@@ -63,11 +64,11 @@ textarea {
   margin-bottom: 1rem;
 
   &:focus {
-    border-color: $primary;
+    border-color: $black;
 
     & ~ .input-note {
-        visibility: visible;
-      }
+      visibility: visible;
+    }
   }
 }
 
@@ -77,9 +78,9 @@ textarea {
 }
 
 ::placeholder {
-    color: rgba(black, 0.3);
-    opacity: 1; 
-  }
+  color: rgba(black, 0.3);
+  opacity: 1;
+}
 
 button {
   transition: all 0.3s ease;
@@ -109,22 +110,34 @@ hr {
   border: 0 none;
 }
 
-.box {
+.preview {
   border: 1px dashed rgba(black, 0.2);
   padding: 1rem;
   border-radius: $border-radius;
   position: relative;
+  line-height: 1.2;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  pointer-events: none;
+
+  a {
+    color: #0000EE;
+    font-weight: initial;
+  }
 
   span {
     position: absolute;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.02rem;
+    letter-spacing: 0.05rem;
     background-color: $white;
     color: $gray;
     padding: 0 0.5rem;
     left: 0.5rem;
-    top: -0.6rem;
+    top: -0.45rem;
     font-size: $font-size-tiny;
   }
 }
@@ -145,59 +158,59 @@ hr {
 }
 
 .image-square {
-    max-width: 128px;
-    border-radius: $border-radius * 2;
-    border: $line;
-
+  max-width: 128px;
+  border-radius: $border-radius * 2;
+  border: $line;
 }
 
 .input {
-    position: relative;
+  position: relative;
 }
 
 .input-note {
-    font-size: $font-size-small;
-    visibility: hidden;
-    display: block;
-    width: 100%;
-    background-color: $white;
-    border: $line;
-    color: $gray;
-    max-width: 200px;
-    position: absolute;
-    top: 0;
-    right: calc(-200px - 1rem);
-    padding: 0.5rem;
-    border-radius: $border-radius;
-    line-height: 1.2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-flow: row nowrap;
-    gap: 1rem;
-    min-height: $click-area;
+  font-size: $font-size-small;
+  visibility: hidden;
+  display: block;
+  width: 100%;
+  background-color: $white;
+  border: $line;
+  color: $gray;
+  max-width: 200px;
+  position: absolute;
+  top: 0;
+  right: calc(-200px - 1rem);
+  padding: 0.5rem;
+  border-radius: $border-radius;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  min-height: $click-area;
 
-    &:after, &:before {
-        right: 100%;
-        top: 24px;
-        border: solid transparent;
-        content: "";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-    }
-    
-    &:after {
-        border-color: rgba(221, 221, 221, 0);
-        border-right-color: $white;
-        border-width: 8px;
-        margin-top: -8px;
-    }
-    &:before {
-        border-color: rgba(221, 221, 221, 0);
-        border-right-color: rgba(black, 0.2);
-        border-width: 9px;
-        margin-top: -9px;
-    }
+  &:after,
+  &:before {
+    right: 100%;
+    top: 24px;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-color: rgba(221, 221, 221, 0);
+    border-right-color: $white;
+    border-width: 8px;
+    margin-top: -8px;
+  }
+  &:before {
+    border-color: rgba(221, 221, 221, 0);
+    border-right-color: rgba(black, 0.2);
+    border-width: 9px;
+    margin-top: -9px;
+  }
 }

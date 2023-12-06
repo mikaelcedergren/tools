@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Lato:wght@400;700;900");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Figtree:wght@400;500;600;700&display=swap");
 .row {
   display: flex;
   flex-flow: row nowrap;
@@ -212,8 +212,6 @@
 }
 
 * {
-  font-family: "Lato";
-  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-variant-ligatures: common-ligatures;
@@ -221,6 +219,8 @@
 }
 
 body {
+  font-family: "Figtree", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: 500;
   background-color: white;
   color: #222;
   font-size: 18px;
@@ -244,12 +244,13 @@ a {
 }
 
 h1 {
-  font-family: "Bebas Neue";
+  font-family: "Bebas Neue", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 4rem;
   font-weight: 400;
   line-height: 0.75;
   margin: 0 0 3rem 0;
-  color: #19002d;
+  color: #222;
+  letter-spacing: -0.1rem;
 }
 
 p {
@@ -272,7 +273,7 @@ textarea {
 }
 input:focus,
 textarea:focus {
-  border-color: #fe016d;
+  border-color: #222;
 }
 input:focus ~ .input-note,
 textarea:focus ~ .input-note {
@@ -316,22 +317,33 @@ hr {
   border: 0 none;
 }
 
-.box {
+.preview {
   border: 1px dashed rgba(0, 0, 0, 0.2);
   padding: 1rem;
   border-radius: 4px;
   position: relative;
+  line-height: 1.2;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  pointer-events: none;
 }
-.box span {
+.preview a {
+  color: #0000EE;
+  font-weight: initial;
+}
+.preview span {
   position: absolute;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.05rem;
   background-color: #fff;
   color: #888;
   padding: 0 0.5rem;
   left: 0.5rem;
-  top: -0.6rem;
+  top: -0.45rem;
   font-size: 11px;
 }
 
