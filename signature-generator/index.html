@@ -32,10 +32,11 @@
           name="lastname"
           id="lastname"
           placeholder="Last name"
+          onblur="generateLink()"
       /></div>
     </div>
     <div class="input">
-      <input type="text" name="title" id="title" placeholder="Title" />
+      <input type="text" name="title" id="title" placeholder="Title"/>
       <div class="input-note"
         >Enter your title with correct capitalization. For instance: Carrier Success Manager, or Driver Success Manager.</div
       >
@@ -48,6 +49,12 @@
         placeholder="Three number extension"
       />
       <div class="input-note">Enter your 3 number extension. For instance: 007.</div>
+    </div>
+    <div class="input">
+      <input type="text" name="link" id="link" placeholder="Hubspot meeting link" />
+      <div class="input-note"
+        >Modify the Hubspot meeting link if needed.</div
+      >
     </div>
     <button id="button">Generate Signature</button>
   </div>
@@ -163,9 +170,17 @@
   const formFirstName = document.getElementById('firstname');
   const formLastName = document.getElementById('lastname');
   const formTitle = document.getElementById('title');
+  const formLink = document.getElementById('link');
   const formExtension = document.getElementById('extension');
   const preview = document.getElementById('preview');
   const button = document.getElementById('button');
+
+  function generateLink() {
+    if (formLink.value.length == 0) {
+      const prefillLink = 'https://meetings.hubspot.com/' + formFirstName.value.trim().toLowerCase() + '-' + formLastName.value.trim().toLowerCase();
+      formLink.value = prefillLink;
+    }
+  }
 
   function generateSignature() {
     const signature =
@@ -180,11 +195,7 @@
       '">(813) 365-9840 ext ' +
       formExtension.value.trim() +
       '</a><br />\n' +
-      '<a href="https://meetings.hubspot.com/' +
-      formFirstName.value.trim().toLowerCase() +
-      '-' +
-      formLastName.value.trim().toLowerCase() +
-      '" target="_blank">Book a demo with me</a><br /><br />\n2203 N Lois Ave, Suite G300<br />\nTampa, Florida 33607<br /><br />\nFeatured in <a href="https://www.freightwaves.com/news/trucking-job-platform-provides-needed-alternative-to-expensive-old-school-recruiting-methods" target="_blank">FreightWaves</a>!';
+      '<a href="' + formLink.value.trim() + '" target="_blank">Book a demo with me</a><br /><br />\n2203 N Lois Ave, Suite G300<br />\nTampa, Florida 33607<br /><br />\nFeatured in <a href="https://www.freightwaves.com/news/trucking-job-platform-provides-needed-alternative-to-expensive-old-school-recruiting-methods" target="_blank">FreightWaves</a>!';
 
     result.value = signature;
     preview.innerHTML = signature;

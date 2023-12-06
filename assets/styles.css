@@ -282,7 +282,7 @@ textarea:focus ~ .input-note {
 
 textarea {
   padding: 1rem;
-  height: 160px;
+  height: 220px;
 }
 
 ::placeholder {
