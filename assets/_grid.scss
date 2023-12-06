@@ -6,6 +6,10 @@
   width: 100%;
   gap: 2rem;
 
+  &.gap-small {
+    gap: 1rem;
+  }
+
   .col {
     flex: 1 1 auto;
     min-width: min-content;

@@ -42,5 +42,13 @@
 }
 
 .text-small {
-    font-size: $font-size-small;
+  font-size: $font-size-small;
+}
+
+.disallow-interaction {
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }

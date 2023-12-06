@@ -17,7 +17,23 @@
   </div>
   <div class="col">
     <p>Enter your contact information, and then click "Generate Signature".</p>
-    <input type="text" name="name" id="name" placeholder="Full name" />
+    <div class="row gap-small">
+      <div class="col">
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          placeholder="First name"
+        />
+      </div>
+      <div class="col"
+        ><input
+          type="text"
+          name="lastname"
+          id="lastname"
+          placeholder="Last name"
+      /></div>
+    </div>
     <div class="input">
       <input type="text" name="title" id="title" placeholder="Title" />
       <div class="input-note"
@@ -42,15 +58,21 @@
     <div class="number">2</div>
   </div>
   <div class="col">
-    <p>Copy this code.</p>
+    <p
+      >Make sure you've spelled and capitalized correctly in the preview. Then
+      copy the code from the field below.</p
+    >
+    <div class="box text-small disallow-interaction mb-1 mt-2">
+      <span>Preview</span>
+      <div id="preview"></div>
+    </div>
     <textarea
       name="result"
       id="result"
       readonly
       onclick="this.focus();this.select()"
+      class="text-small"
     ></textarea>
-    <strong>Preview</strong>
-    <p class="box text-small" id="preview"></p>
   </div>
 </div>
 <hr />
@@ -137,20 +159,25 @@
 </div>
 
 <script>
-  const formName = document.getElementById('name');
+  const formFirstName = document.getElementById('firstname');
+  const formLastName = document.getElementById('lastname');
   const formTitle = document.getElementById('title');
   const formExtension = document.getElementById('extension');
   const preview = document.getElementById('preview');
   const button = document.getElementById('button');
 
-
   function generateSignature() {
-  const signature =
-    '<strong>' +
-    formName.value +
-    '</strong><br />\n' +
-    formTitle.value +
-    ' | <a href="http://www.lanefinder.com/" target="_blank">Lanefinder</a><br />\n' + '<a href="https://meetings.hubspot.com/lea-mitchell" target="_blank">Book a demo with me</a><br /><br />\n2203 N Lois Ave, Suite G300<br />\nTampa, Florida 33607<br /><br />\nFeatured in <a href="https://www.freightwaves.com/news/trucking-job-platform-provides-needed-alternative-to-expensive-old-school-recruiting-methods" target="_blank">FreightWaves</a>!';
+    const signature =
+      '<strong>' +
+      formFirstName.value +
+      ' ' +
+      formLastName.value +
+      '</strong><br />\n' +
+      formTitle.value +
+      ' | <a href="http://www.lanefinder.com/" target="_blank">Lanefinder</a><br />\n' +
+      '<a href="https://meetings.hubspot.com/' +
+      formFirstName.value.toLowerCase() + '-' + formLastName.value.toLowerCase() +
+      '" target="_blank">Book a demo with me</a><br /><br />\n2203 N Lois Ave, Suite G300<br />\nTampa, Florida 33607<br /><br />\nFeatured in <a href="https://www.freightwaves.com/news/trucking-job-platform-provides-needed-alternative-to-expensive-old-school-recruiting-methods" target="_blank">FreightWaves</a>!';
 
     result.value = signature;
     preview.innerHTML = signature;
