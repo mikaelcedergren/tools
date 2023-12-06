@@ -1,0 +1,23 @@
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 1rem;
+
+  .col {
+    flex: 1 1 auto;
+    min-width: min-content;
+    color: inherit;
+    max-width: 100%;
+
+    &.min {
+      flex-grow: 0;
+    }
+  }
+
+  &.middle {
+    align-items: center;
+  }
+}

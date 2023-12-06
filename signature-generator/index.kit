@@ -6,10 +6,11 @@
     <div class="number">1</div>
   </div>
   <div class="col">
-    <p>Start by entering your credentials.</p>
-    <input type="text" name="name" id="" placeholder="Full name..." />
-    <input type="title" name="name" id="" placeholder="Title..." />
-    <button>Generate Signature</button>
+    <p>Enter your credentials, and then click "Generate Signature".</p>
+    <input type="text" name="name" id="name" placeholder="Full name..." />
+    <input type="text" name="title" id="title" placeholder="Title..." />
+    <input type="text" name="extension" id="extension" placeholder="Extension..." />
+    <button id="button">Generate Signature</button>
   </div>
 </div>
 <hr />
@@ -19,15 +20,73 @@
   </div>
   <div class="col">
     <p>Select all text and copy it into your clipboard.</p>
-    <textarea name="result" id=""></textarea>
+    <textarea name="result" id="result" readonly></textarea>
+    <strong>Preview</strong>
+    <p class="block" id="preview"></p>
   </div>
 </div>
 <hr />
-<div class="row">
+<div class="row middle">
   <div class="col min">
     <div class="number">3</div>
   </div>
-  <p>Tutorial</p>
+  <div class="col">Go to <strong>app.hubspot.com</strong> and click on the settings icon.</div>
 </div>
+<hr />
+<div class="row middle">
+  <div class="col min">
+    <div class="number">4</div>
+  </div>
+  <div class="col">Click on <strong>"General"</strong> in the left menu under <strong>"Your Preferences"</strong>. Then click on the tab <strong>"Email"</strong>.</div>
+</div>
+<hr />
+<div class="row middle">
+  <div class="col min">
+    <div class="number">5</div>
+  </div>
+  <div class="col">Scroll down to <strong>"Edit email signature"</strong>.</div>
+</div>
+<hr />
+<div class="row middle">
+  <div class="col min">
+    <div class="number">6</div>
+  </div>
+  <div class="col">Click on <strong>"HTML"</strong> in the top right corner.</div>
+</div>
+<hr />
+<div class="row middle">
+  <div class="col min">
+    <div class="number">7</div>
+  </div>
+  <div class="col">Replace all text with what you copied into your clipboard in the field. Then hit <strong></strong>.</div>
+</div>
+<hr />
+<div class="row middle">
+  <div class="col min">
+    <div class="number">8</div>
+  </div>
+  <div class="col">Revel in the fact that <strong>you're awesome</strong>, and now got a signature to match.</div>
+</div>
+
+
+<script>
+  const formName = document.getElementById('name');
+  const formTitle = document.getElementById('title');
+  const formExtension = document.getElementById('extension');
+  const preview = document.getElementById('preview');
+  const button = document.getElementById('button')
+
+  console.log(name.value);
+
+  const signature = '<strong>' + formName.value + '</strong><br />\n' + formTitle + ' | <a href="http://www.lanefinder.com/" target="_blank">Lanefinder</a><br />\n';
+  
+  function generateSignature() {
+    result.value = signature;
+    preview.innerHTML = signature;
+  }
+
+  button.addEventListener('click', generateSignature);
+
+</script>
 
 <!-- @include '/components/_footer.kit' -->
