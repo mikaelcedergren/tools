@@ -37,7 +37,7 @@
     <div class="input">
       <input type="text" name="title" id="title" placeholder="Title" />
       <div class="input-note"
-        >For instance: Carrier Success Manager, or Driver Success Manager.</div
+        >Enter your full title properly capitalized. For instance: Carrier Success Manager, or Driver Success Manager.</div
       >
     </div>
     <div class="input">
@@ -47,7 +47,7 @@
         id="extension"
         placeholder="Three number extension"
       />
-      <div class="input-note">For instance: 007.</div>
+      <div class="input-note">Enter your 3 number extension. For instance: 007.</div>
     </div>
     <button id="button">Generate Signature</button>
   </div>
@@ -131,7 +131,8 @@
     ><img src="./images/step7.jpg" class="image-square"
   /></div>
   <div class="col"
-    >Before pasting anything, make sure to click on <strong>"HTML"</strong> in the top right corner.</div
+    >Before pasting anything, make sure to click on <strong>"HTML"</strong> in
+    the top right corner.</div
   >
 </div>
 <hr />
@@ -169,14 +170,20 @@
   function generateSignature() {
     const signature =
       '<strong>' +
-      formFirstName.value +
+      formFirstName.value.trim() +
       ' ' +
-      formLastName.value +
+      formLastName.value.trim() +
       '</strong><br />\n' +
-      formTitle.value +
-      ' | <a href="http://www.lanefinder.com/" target="_blank">Lanefinder</a><br />\n' +
+      formTitle.value.trim() +
+      ' | <a href="http://www.lanefinder.com/" target="_blank">Lanefinder</a><br />\nP: <a href="tel:+18133659840,' +
+      formExtension.value.trim() +
+      '">(813) 365-9840 ext ' +
+      formExtension.value.trim() +
+      '</a><br />\n' +
       '<a href="https://meetings.hubspot.com/' +
-      formFirstName.value.toLowerCase() + '-' + formLastName.value.toLowerCase() +
+      formFirstName.value.trim().toLowerCase() +
+      '-' +
+      formLastName.value.trim().toLowerCase() +
       '" target="_blank">Book a demo with me</a><br /><br />\n2203 N Lois Ave, Suite G300<br />\nTampa, Florida 33607<br /><br />\nFeatured in <a href="https://www.freightwaves.com/news/trucking-job-platform-provides-needed-alternative-to-expensive-old-school-recruiting-methods" target="_blank">FreightWaves</a>!';
 
     result.value = signature;
