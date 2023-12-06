@@ -400,7 +400,7 @@ hr {
 }
 .input-note:before {
   border-color: rgba(221, 221, 221, 0);
-  border-right-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.2);
   border-width: 9px;
   margin-top: -9px;
 }
