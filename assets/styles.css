@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  gap: 1rem;
+  gap: 2rem;
 }
 .row .col {
   flex: 1 1 auto;
@@ -196,6 +196,10 @@
   margin-left: 0.5rem;
 }
 
+.text-small {
+  font-size: 14px;
+}
+
 * {
   font-family: "Lato";
   font-weight: 500;
@@ -212,6 +216,12 @@ body {
   padding: 2rem;
   line-height: 1.5;
   text-align: left;
+}
+
+a {
+  color: #222;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 #wrapper {
@@ -301,4 +311,17 @@ hr {
   font-size: 1.2rem;
   font-weight: 700;
   color: #fff;
+}
+
+.image-square {
+  max-width: 128px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-note {
+  font-size: 14px;
+  color: gray;
+  position: relative;
+  top: -0.75rem;
 }

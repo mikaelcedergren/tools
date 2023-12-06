@@ -15,10 +15,16 @@
 body {
   background-color: white;
   color: $black;
-  font-size: 18px;
+  font-size: $font-size-default;
   padding: 2rem;
   line-height: 1.5;
   text-align: left;
+}
+
+a {
+    color: $black;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 #wrapper {
@@ -109,4 +115,18 @@ hr {
   font-size: 1.2rem;
   font-weight: 700;
   color: $white;
+}
+
+.image-square {
+    max-width: 128px;
+    border-radius: $border-radius * 2;
+    border: $line;
+
+}
+
+.form-note {
+    font-size: $font-size-small;
+    color: gray;
+    position: relative;
+    top: -0.75rem;
 }
